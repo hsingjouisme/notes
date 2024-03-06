@@ -88,7 +88,6 @@
                     <div class="notes_menu_btn" onclick="showDiv('_js');changeBtn_color('btn_js');close_overlay();location.href='#div_js'"id="menu_js">JavaScript筆記</div>
                     <div class="notes_menu_btn" onclick="showDiv('_jquery');changeBtn_color('btn_jquery');close_overlay();location.href='#div_jquery'"id="menu_jquery">jQuery 筆記</div>
                     <div class="notes_menu_btn" onclick="showDiv('_vue');changeBtn_color('btn_vue');close_overlay();location.href='#div_vue'"id="menu_vue">vue 筆記</div>
-                    <div class="notes_menu_btn" onclick="showDiv('_php');changeBtn_color('btn_php');close_overlay();location.href='#div_php'"id="menu_php">PHP&MySQL筆記</div>
                     <div class="notes_menu_btn" onclick="showDiv('_animation');changeBtn_color('btn_animation');close_overlay();location.href='#div_animation'" id="menu_animation">動畫筆記</div>
                     <div class="notes_menu_btn" onclick="showDiv('_git_github');changeBtn_color('btn_git_github');close_overlay();location.href='#div_git_github'"id="menu_git_github">Git & GitHub筆記</div>
                     <div class="notes_menu_btn" onclick="showDiv('_other');changeBtn_color('btn_other');close_overlay();location.href='#div_other'"id="menu_other">其他</div>
@@ -108,9 +107,9 @@
             <div class="notes_menu_btn" onclick="showDiv('_design');changeBtn_color('btn_design')" id="btn_design">前端架構與設計</div>
             <div class="notes_menu_btn" onclick="showDiv('_tool');changeBtn_color('btn_tool')" id="btn_tool">前端工具筆記</div>
             <div class="notes_menu_btn" onclick="showDiv('_htmlcss');changeBtn_color('btn_htmlcss');location.href='#div_htmlcss'" id="btn_htmlcss">HTML/CSS筆記</div>
+            <div class="notes_menu_btn" onclick="showDiv('_js');changeBtn_color('btn_js');location.href='#div_js'"id="menu_js">JavaScript筆記</div>
             <div class="notes_menu_btn" onclick="showDiv('_jquery');changeBtn_color('btn_jquery');location.href='#div_jquery'"id="btn_jquery">jQuery 筆記</div>
             <div class="notes_menu_btn" onclick="showDiv('_vue');changeBtn_color('btn_vue');location.href='#div_vue'" id="btn_vue">vue 筆記</div>
-            <div class="notes_menu_btn" onclick="showDiv('_php');changeBtn_color('btn_php');location.href='#div_php'" id="btn_vue">PHP&MySQL筆記</div>
             <div class="notes_menu_btn" onclick="showDiv('_animation');changeBtn_color('btn_animation');location.href='#div_animation'" id="btn_animation">動畫筆記</div>
             <div class="notes_menu_btn" onclick="showDiv('_git_github');changeBtn_color('btn_git_github');location.href='#div_git_github'" id="btn_git_github">Git & GitHub筆記</div>
             <div class="notes_menu_btn" onclick="showDiv('_other');changeBtn_color('btn_other');location.href='#div_other'" id="btn_other">其他</div>
@@ -169,15 +168,7 @@
 
             <!-- 前端工具筆記 -->
             <div id="div_tool" class="hidden">
-                <div class="notes_layout">
-                    <p class="title">前端模組化</p>
-                    <div class="content">
-                        <p class="subtitle">為什麼要模組化</p>
-                        
-                    </div>
-                    
-                    
-                </div>
+                
                 <div class="notes_layout">
                     <p class="title">cookies v.s. session storage  v.s. local storage</p>
                     <div class="content">
@@ -327,7 +318,7 @@
                     </p> 
                     <div class="content">
                         <p class="important">ANS:放在＜head＞中！</p>
-                        原因在於，可以確保瀏覽器在選染網頁內容時，就已經載入需要的外部資源。倘若放在頁面底部，那麼瀏覽器在入時，使用者會看到沒有用css美化過的網頁才載入css
+                        原因在於，可以確保瀏覽器在選染網頁內容時，就已經載入需要的外部資源。倘若放在頁面底部，那麼瀏覽器載入時，使用者會看到沒有用css美化過的網頁才載入css
                     </div>
                 </div>
                 <div class="notes_layout" >
@@ -469,7 +460,7 @@
                             <li>
                                 添加content屬性：沒有這個，偽元素就不會產生（content:" ",除非想要在偽元素裡加上文字-content:'哈囉你好嗎'）
                             </li>
-                            <li>要給偽元素絕對位置才會顯示（記得你的父層要position:relative）</li>
+                            <li>要給偽元素 <span class="important">絕對位置</span> 才會顯示（記得你的父層要position:relative）</li>
                         </ul>
                         <p class="subtitle">偽元素裡面可以在建立一個偽元素嗎？</p>
                         <span class="important">ans:不可以！</span>
@@ -525,6 +516,15 @@
                             <li>自己會獨立出來一層</li>
                         </ul>
                         <p class="subtitle">sticky</p>
+                        <ul>
+                            <li>和fixed一樣，都可以使元素在滾動時「固定」在頁面上</li>
+                            <li>和fixed不同處
+                                <ol>
+                                    <li>sticky的定位是相對於父元素</li>
+                                    <li>老舊版本不支援</li>
+                                </ol>
+                            </li>
+                        </ul>
                         
                     </div>
                 </div>
@@ -551,9 +551,9 @@
                         <p class="important">ans:!import>行內樣式>id>class=偽元素>型態選擇器</p>
                         <ul>
                             <li>!import：偽類，也就是通用的，因此必須小心使用</li>
-                            <li>行內樣式：</li>
-                            <li>id：</li>
-                            <li>class：</li>
+                            <li>行內樣式</li>
+                            <li>id</li>
+                            <li>class</li>
                             <li>型態選擇器：div{ }</li>
                         </ul>
                         <p class="important">若是藉由「繼承」的樣式優先級：「最低」</p>
@@ -1430,6 +1430,14 @@
                 <div class="notes_layout">
                     <p class="title">
                         物件導向
+                    </p> 
+                    <div class="content">
+                        
+                    </div>
+                </div>
+                <div class="notes_layout">
+                    <p class="title">
+                        繼承
                     </p> 
                     <div class="content">
                         
