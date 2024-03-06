@@ -107,7 +107,7 @@
             <div class="notes_menu_btn" onclick="showDiv('_design');changeBtn_color('btn_design')" id="btn_design">前端架構與設計</div>
             <div class="notes_menu_btn" onclick="showDiv('_tool');changeBtn_color('btn_tool')" id="btn_tool">前端工具筆記</div>
             <div class="notes_menu_btn" onclick="showDiv('_htmlcss');changeBtn_color('btn_htmlcss');location.href='#div_htmlcss'" id="btn_htmlcss">HTML/CSS筆記</div>
-            <div class="notes_menu_btn" onclick="showDiv('_js');changeBtn_color('btn_js');location.href='#div_js'"id="menu_js">JavaScript筆記</div>
+            <div class="notes_menu_btn" onclick="showDiv('_js');changeBtn_color('btn_js');location.href='#div_js'"id="btn_js">JavaScript筆記</div>
             <div class="notes_menu_btn" onclick="showDiv('_jquery');changeBtn_color('btn_jquery');location.href='#div_jquery'"id="btn_jquery">jQuery 筆記</div>
             <div class="notes_menu_btn" onclick="showDiv('_vue');changeBtn_color('btn_vue');location.href='#div_vue'" id="btn_vue">vue 筆記</div>
             <div class="notes_menu_btn" onclick="showDiv('_animation');changeBtn_color('btn_animation');location.href='#div_animation'" id="btn_animation">動畫筆記</div>
@@ -761,7 +761,7 @@
                             <li>null的用意是用來宣告「空值」</li>
                             <li>DOM操作時，若DOM元素不存在：null</li>
                         </ul>
-                        <p>所以簡單來說，undefinder是指：</p>
+                        <p>所以簡單來說，undefined是指：</p>
                         <ul>
                             <li>宣告變數但沒有給值</li>
                             <li>呼叫函數，但是缺少參數</li>
@@ -821,7 +821,10 @@
                         表達式v.s.陳述式
                     </p> 
                     <div class="content">
-                    
+                        <ul>
+                            <li>表達式：會回傳值</li>
+                            <li>陳述式：執行完動作之後不會回傳值。所以會用console.log()判斷。另外，會和運算式混用</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="notes_layout">
@@ -829,7 +832,19 @@
                         Scope（作用域）
                     </p> 
                     <div class="content">
-                    
+                        <div class="subtitle">意涵</div>
+                        在程式碼中定義變數的範圍，確定變數可以在哪些地方使用。
+                        <div class="subtitle">種類</div>
+                        <ul>
+                            <li>Global scope：全域變數就會有</li>
+                            <li>Function scope</li>
+                            <li>Block scope：2015後，ES6出現-let和const</li>
+                        </ul>
+                        <div class="subtitle">自動變成全域變數？</div>
+                        <ul>
+                            <li>就是在賦值的時候沒有用let和或是const，那麼就會變成全域變數。<span class="important">即使賦值操作是在函式內</span></li>
+                            <li>但是這樣做容易產生問題，所以ES6出現了let和const兩個關鍵字，將變數作用域限制在宣告變數之區域內。</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="notes_layout">
@@ -844,9 +859,10 @@
                             </li>
                             <li class="important">只有提升「宣告」這件事喔！並不會賦值</li>
                         </ul>
-                        <p class="subtitle">何謂何謂TDZ（暫時死區）</p>
+                        <p class="subtitle">何謂TDZ（暫時死區）</p>
+                        意涵：就是用let或是const宣告變數時，變數在宣告前沒有辦法使用，否則會導致"ReferenceError。"<br>
                         目的：是為了避免還沒被宣告的變數被拿來用。
-
+                        <p class="important">會被提升的只有「宣告變數」這件事喔！！！</p>
                     </div>
                 </div>
                 <div class="notes_layout">
@@ -1329,16 +1345,16 @@
                         </ul>
                         <p class="subtitle">例子-innerHTML</p>
                         <div class="example">
-                            例如在HTML有一個id為myElement的元素，內容為「原始內容」
-                            <p>JavaScript</p>
+                            <p> 例如在HTML有一個id為myElement的元素，內容為「原始內容」</p>
+                            
                             var myElement = document.getElementById('myElement'); <br>
                             // 使用 innerHTML 更新元素內容 <br>
                             myElement.innerHTML = '新的內容 ＜strong＞加粗＜/strong＞'; 
                         </div>
                         <p class="subtitle">例子-innerText</p>
                         <div class="example">
-                            例如在HTML有一個id為myElement的元素，內容為「原始內容」
-                            <p>JavaScript</p>
+                            <p> 例如在HTML有一個id為myElement的元素，內容為「原始內容」</p>
+                            
                             var myElement = document.getElementById('myElement'); <br>
                             // 使用 innerText 更新元素文本內容 <br>
                             myElement.innerText = '新的文本內容';

@@ -189,7 +189,7 @@ input:focus{
     font-family: 'Amatic SC', 'M PLUS Rounded 1c';
     border-radius: 20px 20px 0 0;
     color: snow;
-    padding: 10px;
+    padding: 10px 0px;
     text-align: center;
 }
 .content{
